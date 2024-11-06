@@ -18,6 +18,10 @@ app.use(express.json());
 const userRoutes = require("./routes/userRoutes");
 const roomRoutes = require("./routes/roomRoutes");
 
+app.get("/", (req, res) => {
+  res.send("Welcome to the Chat Application API!");
+});
+
 app.use(userRoutes);
 app.use(roomRoutes);
 
