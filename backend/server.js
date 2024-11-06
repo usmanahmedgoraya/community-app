@@ -11,7 +11,10 @@ const cors = require("cors");
 require("dotenv").config();
 const app = express();
 require("./db/connection");
-app.use(cors());
+app.use(cors({
+  origin: 'https://community-app-mocha.vercel.app',
+}));
+
 app.use(express.json());
 
 // routers imports
