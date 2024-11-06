@@ -12,7 +12,9 @@ require("dotenv").config();
 const app = express();
 require("./db/connection");
 app.use(cors({
-  origin: 'https://community-app-mocha.vercel.app',
+  origin: 'https://community-app-mocha.vercel.app', // Update to the front-end's URL
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true,
 }));
 
 app.use(express.json());
