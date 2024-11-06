@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+body {
+  font-family: 'Inter Tight', sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+/* Custom Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+  height: 8px; /* Height of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Background of the scrollbar track */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #615EF0; /* Color of the scrollbar thumb */
+  border-radius: 10px;
+  border: 2px solid #f1f1f1; /* Adds a border to make the thumb appear thinner */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4643f1; /* Color of the scrollbar thumb on hover */
+}
+
+
+
+/* add this to your :root variables */
+.checkbox {
+  --light: rgba(207, 205, 205, 0.425);
+  --primary-color: #8c00ff;
+  --duration: 0.3s;
+  --ease: ease-in-out;
+}
+
+/* hide checkbox */
+.checkbox input[type="checkbox"] {
+  display: none;
+}
+
+.checkbox label {
+  align-items: center;
+  cursor: pointer;
+  display: flex;
+}
+
+.checkbox label span {
+  margin-left: 4px;
+}
+
+.checkbox svg {
+  height: 20px;
+  width: 20px;
+}
+
+/* svg rectangle property */
+.checkbox svg > rect {
+  fill: var(--light);
+  stroke: #8c00ff;
+  /* responsive values */
+  stroke-dasharray: 400%;
+  stroke-dashoffset: 400%;
+  transition: var(--duration) stroke-dashoffset var(--ease);
+}
+
+/* svg check property */
+.checkbox svg path {
+  stroke: var(--primary-color);
+  /* responsive values */
+  stroke-dasharray: 100%;
+  stroke-dashoffset: 100%;
+  transition: var(--duration) stroke-dashoffset var(--ease);
+}
+
+.checkbox input[type="checkbox"]:checked + label svg > rect,
+  .checkbox input[type="checkbox"]:checked + label svg path {
+  stroke-dashoffset: 0;
+}
+
+.radius-without-left-top{
+  border-top-left-radius: 0px;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+.radius-without-right-top{
+  border-top-left-radius: 8px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+
