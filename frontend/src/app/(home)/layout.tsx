@@ -20,6 +20,7 @@ import {
   MenuItem,
   MenuList,
 } from "@material-tailwind/react";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -81,19 +82,23 @@ export default function RootLayout({
     >
       <div className="lg:h-screen h-[15%] shadow-[4px_4px_4px_0px_#E3E3E340] flex lg:flex-col flex-col-reverse lg:justify-between justify-end lg:py-5 py-1 gap-2 p-5 lg:w-24 w-full">
         <div className="flex lg:flex-col w-full flex-row lg:gap-10 gap-2">
+          <Link href={'/feed'}>
           <div className="hidden h-14 w-14 lg:flex justify-center items-center text-white font-bold text-2xl font-family-asap rounded-xl bg-[#615EF0]">
             <span className={`${asap.className}`}>Q</span>
           </div>
+          </Link>
           <NavLinks />
         </div>
 
         <div className="flex lg:flex-col flex-row mb-2 md:mb-0 justify-end lg:justify-center w-full lg:gap-4 gap-2 items-start">
           <div className="w-[48px] lg:mx-auto border-2 cursor-pointer border-[#8C8C8C] py-2 rounded-full">
+            <Link href={"/notifications"}>
             <Image
               className="mx-auto w-7"
               src={notificationIcon}
               alt="notification"
             />
+            </Link>
           </div>
           <Menu placement="bottom-start">
             <MenuHandler>

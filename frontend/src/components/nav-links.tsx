@@ -28,7 +28,9 @@ export default function NavLinks() {
         
       </div>
       <div className="w-full cursor-pointer">
+        <Link href={'/calendar'}>
         <Image className="mx-auto w-6" src={calenderBlack} alt="calendar" />
+        </Link>
       </div>
     </div>
   );
